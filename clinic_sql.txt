@@ -1,0 +1,142 @@
+CREATE DATABASE db_clinic;
+
+USE db_clinic;
+
+CREATE TABLE `tbl_patient` (
+	`pat_id` INT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`pat_FName` VARCHAR(180) NOT NULL DEFAULT '',
+	`pat_LName` VARCHAR(180) NOT NULL DEFAULT '',
+	`pat_gender` CHAR(1) NOT NULL DEFAULT '',
+	`pat_birthday` DATE NOT NULL DEFAULT '0000-00-00',
+	`pat_age` INT(2) NOT NULL DEFAULT '0',
+	`pat_bloodtype` VARCHAR(2) NOT NULL DEFAULT '',
+	`pat_desc` VARCHAR(600) NOT NULL DEFAULT '',
+	`pat_number` VARCHAR(11) NOT NULL DEFAULT '0',
+	`pat_email` VARCHAR(180) NOT NULL DEFAULT '',
+	PRIMARY KEY (`pat_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=100
+;
+
+CREATE TABLE `tbl_doctor` (
+	`doc_id` INT(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`doc_FName` VARCHAR(180) NOT NULL DEFAULT '',
+	`doc_LName` VARCHAR(180) NOT NULL DEFAULT '',
+	`doc_birthday` DATE NOT NULL DEFAULT '0000-00-00',
+	`doc_age` INT(2) NOT NULL DEFAULT '0',
+	`doc_number` VARCHAR(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`doc_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1000
+;
+
+CREATE TABLE `tbl_appointment` (
+	`app_id` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`doc_id` INT(4) NOT NULL DEFAULT '0',
+	`pat_id` INT(3) NOT NULL DEFAULT '0',
+	`app_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`app_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=10000
+;
+
+CREATE TABLE `tbl_checkup` (
+	`cup_id` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`app_id` INT(5) NOT NULL DEFAULT '0',
+	`doc_id` INT(4) NOT NULL DEFAULT '0',
+	`pat_id` INT(3) NOT NULL DEFAULT '0',
+	`find_id` INT(9) NOT NULL DEFAULT '0',
+	`ob_id` BIGINT(10) NOT NULL DEFAULT '0',
+	`cup_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`cup_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=100000
+;
+
+CREATE TABLE `tbl_lab` (
+	`lab_id` INT(7) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`lab_name` VARCHAR(180) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`lab_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1000000
+;
+
+CREATE TABLE `tbl_meds` (
+	`med_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`med_name` VARCHAR(180) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`med_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=10000000
+;
+
+CREATE TABLE `tbl_finding` (
+	`find_id` INT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`find_desc` VARCHAR(600) NOT NULL DEFAULT '',
+	`app_id` INT(5) NOT NULL DEFAULT '0',
+	`find_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`find_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=100000000
+;
+
+CREATE TABLE `tbl_observation` (
+	`ob_id` BIGINT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`ob_desc` VARCHAR(600) NOT NULL DEFAULT '',
+	`app_id` INT(5) NOT NULL DEFAULT '0',
+	`ob_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`ob_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=1000000000
+;
+
+CREATE TABLE `tbl_medication` (
+	`medic_id` BIGINT(12) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`medic_desc` VARCHAR(600) NOT NULL DEFAULT '',
+	`med_id` INT(8) NOT NULL DEFAULT '0',
+	`app_id` INT(5) NOT NULL DEFAULT '0',
+	`medic_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`medic_id`)
+)COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=100000000000
+;
+CREATE TABLE `tbl_labres` (
+	`res_id` BIGINT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`res_desc` VARCHAR(600) NOT NULL DEFAULT '',
+	`lab_id` INT(7) NOT NULL DEFAULT '0',
+	`app_id` INT(5) NOT NULL DEFAULT '0',
+	`res_date` DATE NOT NULL DEFAULT '0000-00-00',
+	PRIMARY KEY (`res_id`)
+)COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=10000000000
+;
+
+
+INSERT INTO tbl_doctor(doc_FName, doc_LName, doc_birthday, doc_age, doc_number) VALUES("Blitz", "Dog", "2000-10-10", "19","09495810201");
+INSERT INTO tbl_doctor(doc_FName, doc_LName, doc_birthday, doc_age, doc_number) VALUES("AWa", "cat", "1998-03-20", "21", "09489098182");
+INSERT INTO tbl_patient(pat_FName, pat_LName, pat_gender, pat_birthday, pat_age, pat_bloodtype, pat_desc, pat_number, pat_email) VALUES("Chynna", "Coronel","F", "2009-10-21", "10","A", "descA", "09495822221", "coronel.chynna@gmail.com");
+INSERT INTO tbl_patient(pat_FName, pat_LName, pat_gender, pat_birthday, pat_age, pat_bloodtype, pat_desc, pat_number, pat_email) VALUES("Chris", "Ledesma", "M", "2000-03-15", "19", "B", "descB", "09192475949", "chrispysoup@gmail.com");
+INSERT INTO tbl_lab(lab_name) VALUES("Lab 101");
+INSERT INTO tbl_lab(lab_name) VALUES("Lab 102");
+INSERT INTO tbl_meds(med_name) VALUES("Paracetamol");
+INSERT INTO tbl_meds(med_name) VALUES("Ibuprofen");
+
+
+
