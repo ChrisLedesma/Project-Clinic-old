@@ -21,7 +21,7 @@
 	<div class=" d-flex flex-row justify-content-around align-content-center" style="width: 100%; border: 0px solid red;">
 	<div class="card w-75 border-info mb-6" style="margin-right: 10px; ">
 		<div class="card-header d-flex justify-content-between align-items-center">
-		<div>EDIT PROFILE</div>
+		<div>ADD PATIENT</div>
 	
 		</div>
 		<div class="row justify-content-between card-body text-info" style="padding: 2vw 5vw 0vw 5vw;">
