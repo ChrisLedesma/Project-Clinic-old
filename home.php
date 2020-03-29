@@ -15,9 +15,10 @@
         </div>
     </div>
 </nav>
-
-<h1>Welcome!</h1><br><br>
-<h2>Members: </h2><br>
-<h3>Christian Dominic Ledesma</h3><br>
-<h3>Angela Coronel</h3><br>
-<h3>Ron Lim</h3><br>
+<div style="align-text: center;">
+    <h1>Welcome!</h1><br><br>
+    <h2>Members: </h2><br>
+    <h3>Christian Dominic Ledesma</h3><br>
+    <h3>Angela Coronel</h3><br>
+    <h3>Ron Lim</h3><br>
+</div>
