@@ -15,7 +15,7 @@
         </div>
     </div>
 </nav>
-<div style="align-text: center;">
+<div style="text-align: center;">
     <h1>Welcome!</h1><br><br>
     <h2>Members: </h2><br>
     <h3>Christian Dominic Ledesma</h3><br>
