@@ -61,7 +61,7 @@ $q1 = mysqli_query($conn,$sql1) or die (mysqli_error($conn));
 		</div>
 		<div class="empty-small"></div>
 		<div class="row justify-content-around card-body text-info" style="padding: 0vw 5vw 5vw 5vw;">
-		<input class="btn btn-info btn-lg btn-block" type="Submit" name="Submit" value="Add Appointment">>
+		<input class="btn btn-info btn-lg btn-block" type="Submit" name="Submit" value="Add Appointment">
 		</div>
 	</div>
 </form>
