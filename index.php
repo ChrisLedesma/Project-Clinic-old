@@ -82,7 +82,7 @@ $prod = (isset($_GET['id']) && $_GET['id'] != '') ? $_GET['id'] : '';
                   Ron Lim<br>
                 </li>
                 <li>
-                    <a href="https://drive.google.com/file/d/1opjz37vGIJ5NgGCCasi2H7YtNIvAjjiI/view?usp=sharing" style="font-family: 'Reem Kufi', sans-serif; color: yellow;">HOW TO USE?</a>
+                    <a href="https://drive.google.com/file/d/1opjz37vGIJ5NgGCCasi2H7YtNIvAjjiI/view?usp=sharing" target="blank" style="font-family: 'Reem Kufi', sans-serif; color: yellow;">HOW TO USE?</a>
                 </li>
             </ul>
 
